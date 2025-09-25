@@ -51,7 +51,7 @@ Repeat 6 times max
                               // Resend Email otp
                               otpCode = Call userRegistrationService sendEmail email lang
                               When otpCode is null
-                                   Log "@ " __________
+                                   Log "@info Fail to resend new code to user. " otpCode
                               // Log code resend
                               Log "@info New OTP code send successfully!" otpCode
                               // Provide feedback about the error message to user.
@@ -80,8 +80,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_dxnfx = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_dxnfx
+                    it_kbhkz = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_kbhkz
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -98,5 +98,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_wtksh = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_wtksh
+it_mxofk = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_mxofk
