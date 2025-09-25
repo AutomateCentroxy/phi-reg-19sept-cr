@@ -41,6 +41,7 @@ Repeat 6 times max
                     EmailMax = Repeat 4 times max
                          Log "@ " __________
                          RRF "__________" 
+                    uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     Log "@ " __________
                     Finish __________
                Otherwise
@@ -59,5 +60,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_dmjsw = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_dmjsw
+it_kydht = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_kydht
