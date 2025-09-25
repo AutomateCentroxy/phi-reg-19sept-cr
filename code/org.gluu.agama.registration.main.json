@@ -1852,8 +1852,8 @@
 				}
 			},
 			"measured": {
-				"width": 170,
-				"height": 124
+				"width": 168,
+				"height": 120
 			}
 		},
 		{
@@ -2077,7 +2077,8 @@
 				"width": 168,
 				"height": 120
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "assignmentNode-f2f8b610-af5f-4550-88a6-80a9fa4b580e",
