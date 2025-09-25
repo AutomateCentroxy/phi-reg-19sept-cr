@@ -2340,7 +2340,79 @@
 				"width": 170,
 				"height": 124
 			},
+			"selected": false
+		},
+		{
+			"id": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
+			"type": "callNode",
+			"position": {
+				"x": 6221.041494806046,
+				"y": 1531.5547556452213
+			},
+			"data": {
+				"id": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
+				"type": "callNode",
+				"position": {
+					"x": 6221.041494806046,
+					"y": 1531.5547556452213
+				},
+				"previousNodeId": "assignmentNode-f9660d94-9dd8-40af-a88a-988950fb0964",
+				"agamaData": {
+					"javaClassName": "",
+					"javaMethodName": "sendOTPCode",
+					"javaVariableName": "userRegistrationService",
+					"exceptionVariableField": "",
+					"callType": "Call method on instance",
+					"arguments": [
+						"phone"
+					],
+					"nodeIcon": "material-symbols:code",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "sent sms otp",
+					"hasComment": true,
+					"comment": "sent sms otp",
+					"asssignedVariableName": "smsOtpSend"
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 124
+			},
 			"selected": true
+		},
+		{
+			"id": "logNode-9e97858e-3e2f-4868-b479-eea488c9d2c5",
+			"type": "logNode",
+			"position": {
+				"x": 6471.041494806046,
+				"y": 1531.5547556452213
+			},
+			"data": {
+				"id": "logNode-9e97858e-3e2f-4868-b479-eea488c9d2c5",
+				"type": "logNode",
+				"position": {
+					"x": 6471.041494806046,
+					"y": 1531.5547556452213
+				},
+				"previousNodeId": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
+				"agamaData": {
+					"logMessage": "",
+					"logLevel": "",
+					"nodeIcon": "octicon:log-16",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": ""
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 124
+			}
 		}
 	],
 	"edges": [
@@ -3475,11 +3547,49 @@
 			},
 			"labelShowBg": true,
 			"sourceHandle": "source_rrfNode-876fc324-9f46-4b6e-b4c8-72b6c1f7e2f3"
+		},
+		{
+			"id": "assignmentNode-f9660d94-9dd8-40af-a88a-988950fb0964-callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
+			"type": "default",
+			"source": "assignmentNode-f9660d94-9dd8-40af-a88a-988950fb0964",
+			"target": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_assignmentNode-f9660d94-9dd8-40af-a88a-988950fb0964"
+		},
+		{
+			"id": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec-logNode-9e97858e-3e2f-4868-b479-eea488c9d2c5",
+			"type": "default",
+			"source": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
+			"target": "logNode-9e97858e-3e2f-4868-b479-eea488c9d2c5",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec"
 		}
 	],
 	"viewport": {
-		"x": -4671.67575098818,
-		"y": -1020.3100041312705,
-		"zoom": 0.8802590135631494
+		"x": -5209.487301722716,
+		"y": -1096.1948976291162,
+		"zoom": 0.8802590135631487
 	}
 }
