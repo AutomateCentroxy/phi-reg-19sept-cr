@@ -80,7 +80,8 @@ Repeat 6 times max
                                         Log "@info OTP generated and send to: " phone
                                         otpValidationResult = false
                                         maxSMS = Repeat 4 times max
-                                             RRF "__________" 
+                                             //  Show UI to collect OTP code from user.
+                                             otpCreds = RRF "smsOtp.ftlh" uiFeedback
                                              When 
                                                   Log "@ " __________
                                                   Call __________#__________ 
@@ -111,8 +112,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_wvacg = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_wvacg
+                    it_zceih = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_zceih
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -129,5 +130,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_cxqdl = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_cxqdl
+it_fijqp = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_fijqp
