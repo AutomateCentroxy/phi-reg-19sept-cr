@@ -60,7 +60,7 @@ Repeat 6 times max
                          Otherwise
                               // "OTP provided by the user " 
                               Log "@info OTP provided by the user " 
-                              When 
+                              When emailOtpCreds.passcode is otpCode
                                    Log "@ " __________
                                    Log "@ " __________
                                    // Call user registration service method to register a new user
@@ -82,8 +82,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_rzmhp = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_rzmhp
+                    it_kwqph = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_kwqph
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -100,5 +100,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_xtqqq = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_xtqqq
+it_wijtt = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_wijtt
