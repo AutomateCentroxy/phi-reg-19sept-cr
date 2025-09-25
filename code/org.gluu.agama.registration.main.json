@@ -1631,7 +1631,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "finishNode-9907a3ad-c6a0-4b71-84fb-86c49721723b",
@@ -1656,7 +1656,8 @@
 					"hasComment": true,
 					"comment": "",
 					"flowfilename": "",
-					"returnVariable": "",
+					"returnVariable": "{success:false, error:\"User update flow reached max attempts. Try later\"}",
+					"finishMode": "withFailure",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
 				}
 			},
@@ -1664,7 +1665,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
