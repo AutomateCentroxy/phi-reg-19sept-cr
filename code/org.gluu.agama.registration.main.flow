@@ -101,8 +101,8 @@ Repeat 6 times max
                                                   otpValidationResult = Call userRegistrationService validateOTPCode phone otpCreds.code
                                                   // Add log entry withvalidation result in log file.
                                                   Log "@info OTP validation result is:" otpValidationResult
-                                                  When 
-                                                       Log "@ " __________
+                                                  When otpValidationResult is true
+                                                       Log "@info OTP validated Successfully"
                                                        Call __________#__________ 
                                                        RRF "__________" 
                                                        Log "@ " __________
@@ -124,8 +124,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_pcmbc = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_pcmbc
+                    it_cftvb = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_cftvb
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -142,5 +142,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_tnfsw = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_tnfsw
+it_tblmw = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_tblmw
