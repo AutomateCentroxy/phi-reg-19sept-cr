@@ -1855,7 +1855,7 @@
 				"width": 168,
 				"height": 120
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-c11d9dc0-528e-475f-bd7c-c835c64cf226",
@@ -2138,7 +2138,14 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "emailOtpCreds.passcode",
+							"operator": "is",
+							"dataValue": "otpCode",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
@@ -2152,7 +2159,8 @@
 				"width": 110,
 				"height": 60
 			},
-			"selected": false
+			"selected": true,
+			"dragging": false
 		},
 		{
 			"id": "logNode-0c47b1c3-9a5d-4269-99bd-63bf49268021",
