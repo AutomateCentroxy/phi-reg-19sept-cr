@@ -3187,7 +3187,7 @@
 				"width": 168,
 				"height": 120
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "callNode-4e14e534-c156-435d-a16d-2a525bf31fff",
@@ -3206,24 +3206,28 @@
 				"previousNodeId": "logNode-6ae395df-78a7-4681-a9c8-9b80b3573a7b",
 				"agamaData": {
 					"javaClassName": "",
-					"javaMethodName": "",
-					"javaVariableName": "",
+					"javaMethodName": "markPhoneAsVerified",
+					"javaVariableName": "userRegistrationService",
 					"exceptionVariableField": "",
-					"callType": "Call static method",
-					"arguments": [],
+					"callType": "Call method on instance",
+					"arguments": [
+						"userName"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "phonenumber",
 					"hasComment": true,
-					"comment": ""
+					"comment": "",
+					"asssignedVariableName": "phoneVerified"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 124
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "rrfNode-13199a8b-eb47-4fc4-9710-f9b34af53407",
