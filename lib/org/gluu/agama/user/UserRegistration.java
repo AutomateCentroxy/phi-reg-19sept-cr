@@ -22,7 +22,7 @@ public abstract class UserRegistration {
 
     public abstract boolean validateOTPCode(String phone, String code);
 
-    public abstract String markPhoneAsVerified(String userName);
+    public abstract boolean markPhoneAsVerified(String userName);
     
     // public static UserRegistration getInstance(){
     //     return  JansUserRegistration.getInstance();
