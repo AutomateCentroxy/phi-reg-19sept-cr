@@ -270,14 +270,6 @@ public class JansUserRegistration extends UserRegistration {
 
     }
     
-
-    private SmtpConfiguration getSmtpConfiguration() {
-        ConfigurationService configurationService = CdiUtil.bean(ConfigurationService.class);
-        SmtpConfiguration smtpConfiguration = configurationService.getConfiguration().getSmtpConfiguration();
-        LogUtils.log("Your smtp configuration is %", smtpConfiguration);
-        return smtpConfiguration;
-
-    }
         
     public String sendOTPCode(String phone) {
         try {
