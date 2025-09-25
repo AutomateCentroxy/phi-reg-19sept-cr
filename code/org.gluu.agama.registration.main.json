@@ -120,8 +120,8 @@
 			"id": "rrfNode-8fae6a8f-1113-41a1-b159-caf0fdeb26d6",
 			"type": "rrfNode",
 			"position": {
-				"x": -1083.9460944693162,
-				"y": -62.75696579615152
+				"x": -1113.0115582806066,
+				"y": -76.86737242241179
 			},
 			"data": {
 				"id": "rrfNode-8fae6a8f-1113-41a1-b159-caf0fdeb26d6",
@@ -150,7 +150,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -227,8 +227,8 @@
 			"id": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
 			"type": "assignmentNode",
 			"position": {
-				"x": -615.5573979042472,
-				"y": -69.40043847785402
+				"x": -614.0152515634079,
+				"y": -74.31240539671242
 			},
 			"data": {
 				"id": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
@@ -279,7 +279,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -825,8 +825,8 @@
 			"id": "callNode-10bd705b-7d64-4d18-bde1-aa3069aea8d1",
 			"type": "callNode",
 			"position": {
-				"x": -854.7814599317414,
-				"y": -59.28440488574732
+				"x": -865.6036171570953,
+				"y": -77.0365935666278
 			},
 			"data": {
 				"id": "callNode-10bd705b-7d64-4d18-bde1-aa3069aea8d1",
@@ -1179,8 +1179,8 @@
 			"id": "callNode-0cafadeb-e3fe-40be-b5cf-b9f671f7554d",
 			"type": "callNode",
 			"position": {
-				"x": -364.1227042601336,
-				"y": -70.34987658091794
+				"x": -118.04843847449865,
+				"y": -78.201345009648
 			},
 			"data": {
 				"id": "callNode-0cafadeb-e3fe-40be-b5cf-b9f671f7554d",
@@ -1189,7 +1189,7 @@
 					"x": 288.0745112664228,
 					"y": 178.15797993870473
 				},
-				"previousNodeId": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
+				"previousNodeId": "assignmentNode-31a8bf49-6d24-46a1-9bde-759d5e93aef8",
 				"agamaData": {
 					"javaClassName": "",
 					"javaMethodName": "validateInputs",
@@ -1220,8 +1220,8 @@
 			"id": "logNode-989481df-270a-4e3d-99c1-895f8fd8a0f2",
 			"type": "logNode",
 			"position": {
-				"x": -140.09489488801142,
-				"y": -80.69747687387675
+				"x": 125.60804196944872,
+				"y": -78.08032073096672
 			},
 			"data": {
 				"id": "logNode-989481df-270a-4e3d-99c1-895f8fd8a0f2",
@@ -1254,7 +1254,7 @@
 			"id": "whenNode-fd79f445-bc1b-4b1c-a395-4a1f903cc482",
 			"type": "whenNode",
 			"position": {
-				"x": 120.29250255979932,
+				"x": 370.29250255979935,
 				"y": -18.73226370291204
 			},
 			"data": {
@@ -1324,6 +1324,39 @@
 					"displayName": "",
 					"hasComment": true,
 					"comment": "OTP does not match"
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 124
+			},
+			"selected": false,
+			"dragging": false
+		},
+		{
+			"id": "assignmentNode-31a8bf49-6d24-46a1-9bde-759d5e93aef8",
+			"type": "assignmentNode",
+			"position": {
+				"x": -374.8134274224744,
+				"y": -75.96252543873749
+			},
+			"data": {
+				"id": "assignmentNode-31a8bf49-6d24-46a1-9bde-759d5e93aef8",
+				"type": "assignmentNode",
+				"position": {
+					"x": -586.4735237107598,
+					"y": -70.38667118234738
+				},
+				"previousNodeId": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
+				"agamaData": {
+					"assignments": [],
+					"nodeIcon": "material-symbols:equal",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": ""
 				}
 			},
 			"measured": {
@@ -1920,25 +1953,6 @@
 			"id": "xy-edge__repeatNode-e4d163b9-80ef-4135-995e-b9d43c85f60bsource_repeatNode-e4d163b9-80ef-4135-995e-b9d43c85f60b_repeat-rrfNode-0874512d-eece-4ead-8d9a-0ef5fb7c9666target_rrfNode-0874512d-eece-4ead-8d9a-0ef5fb7c9666"
 		},
 		{
-			"id": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b-callNode-0cafadeb-e3fe-40be-b5cf-b9f671f7554d",
-			"type": "default",
-			"source": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
-			"target": "callNode-0cafadeb-e3fe-40be-b5cf-b9f671f7554d",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"label": "",
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"labelShowBg": true,
-			"sourceHandle": "source_assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b"
-		},
-		{
 			"id": "callNode-0cafadeb-e3fe-40be-b5cf-b9f671f7554d-logNode-989481df-270a-4e3d-99c1-895f8fd8a0f2",
 			"type": "default",
 			"source": "callNode-0cafadeb-e3fe-40be-b5cf-b9f671f7554d",
@@ -2012,11 +2026,49 @@
 				"fillOpacity": 0.7
 			},
 			"id": "xy-edge__whenNode-fd79f445-bc1b-4b1c-a395-4a1f903cc482source_whenNode-fd79f445-bc1b-4b1c-a395-4a1f903cc482_success-callNode-1e9e2090-3521-421c-b1a9-e8bafc4b306ctarget_callNode-1e9e2090-3521-421c-b1a9-e8bafc4b306c"
+		},
+		{
+			"id": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b-assignmentNode-31a8bf49-6d24-46a1-9bde-759d5e93aef8",
+			"type": "default",
+			"source": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
+			"target": "assignmentNode-31a8bf49-6d24-46a1-9bde-759d5e93aef8",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b"
+		},
+		{
+			"id": "assignmentNode-31a8bf49-6d24-46a1-9bde-759d5e93aef8-callNode-0cafadeb-e3fe-40be-b5cf-b9f671f7554d",
+			"type": "default",
+			"source": "assignmentNode-31a8bf49-6d24-46a1-9bde-759d5e93aef8",
+			"target": "callNode-0cafadeb-e3fe-40be-b5cf-b9f671f7554d",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"sourceHandle": "source_assignmentNode-31a8bf49-6d24-46a1-9bde-759d5e93aef8",
+			"targetHandle": "target_callNode-0cafadeb-e3fe-40be-b5cf-b9f671f7554d"
 		}
 	],
 	"viewport": {
-		"x": 1141.5681533985744,
-		"y": 396.6652079268,
-		"zoom": 0.7641882603825831
+		"x": 978.7466435280357,
+		"y": 461.92315591137344,
+		"zoom": 0.764188260382583
 	}
 }
