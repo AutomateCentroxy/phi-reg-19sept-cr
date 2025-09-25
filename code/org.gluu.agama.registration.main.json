@@ -1454,8 +1454,41 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
+		},
+		{
+			"id": "logNode-f672c660-13fc-4ffd-9dc1-87b45b333505",
+			"type": "logNode",
+			"position": {
+				"x": 1598.0252143472196,
+				"y": 828.4491099011568
+			},
+			"data": {
+				"id": "logNode-f672c660-13fc-4ffd-9dc1-87b45b333505",
+				"type": "logNode",
+				"position": {
+					"x": 1598.0252143472196,
+					"y": 828.4491099011568
+				},
+				"previousNodeId": "callNode-4c24ad52-b67b-42d3-a28e-2ec35974c3ac",
+				"agamaData": {
+					"logMessage": "\"OTP generated and send to: \" email",
+					"logLevel": "info",
+					"nodeIcon": "octicon:log-16",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "Email OTP code send",
+					"hasComment": true,
+					"comment": ""
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 124
+			},
+			"selected": true
 		}
 	],
 	"edges": [
@@ -2113,11 +2146,30 @@
 			},
 			"sourceHandle": "source_assignmentNode-e2eff0d4-31c7-4089-a1b8-cabcc6445ce7",
 			"targetHandle": "target_callNode-0cafadeb-e3fe-40be-b5cf-b9f671f7554d"
+		},
+		{
+			"id": "callNode-4c24ad52-b67b-42d3-a28e-2ec35974c3ac-logNode-f672c660-13fc-4ffd-9dc1-87b45b333505",
+			"type": "default",
+			"source": "callNode-4c24ad52-b67b-42d3-a28e-2ec35974c3ac",
+			"target": "logNode-f672c660-13fc-4ffd-9dc1-87b45b333505",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_callNode-4c24ad52-b67b-42d3-a28e-2ec35974c3ac"
 		}
 	],
 	"viewport": {
-		"x": -879.6106587353772,
-		"y": -308.137229255031,
+		"x": -1015.6106587353772,
+		"y": -359.137229255031,
 		"zoom": 0.8802590135631507
 	}
 }
