@@ -2556,7 +2556,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "finishNode-126fa6ea-2bef-40ad-92fa-78233083794d",
@@ -2577,18 +2577,20 @@
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "SMS OTP error",
 					"hasComment": true,
 					"comment": "",
 					"flowfilename": "",
-					"returnVariable": "",
+					"returnVariable": "it_otpmax",
+					"finishMode": "withVariable",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 124
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "rrfNode-653a39e2-4283-4352-9da1-8376d54ad9e8",
