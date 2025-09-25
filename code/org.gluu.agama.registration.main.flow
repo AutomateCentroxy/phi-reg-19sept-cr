@@ -76,7 +76,8 @@ Repeat 6 times max
                                         uiFeedback.errorMessage = null
                                         // sent sms otp
                                         smsOtpSend = Call userRegistrationService sendOTPCode phone
-                                        Log "@ " __________
+                                        // The OTP Code has been send to user.
+                                        Log "@info OTP generated and send to: " phone
                                         Repeat __________ times max
                                              RRF "__________" 
                                              When 
@@ -89,6 +90,13 @@ Repeat 6 times max
                                                   Log "@ " __________
                                                   Call __________#__________ 
                                                   Log "@ " __________
+                                                  When 
+                                                       Log "@ " __________
+                                                       Call __________#__________ 
+                                                       RRF "__________" 
+                                                       Log "@ " __________
+                                                  Otherwise
+                                                       Log "@ " __________
                                         Log "@ " __________
                                         Finish __________
                                    // Registration failed log
@@ -101,8 +109,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_yhwig = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_yhwig
+                    it_ckxpl = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_ckxpl
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -119,5 +127,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_kdbky = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_kdbky
+it_bbxxi = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_bbxxi
