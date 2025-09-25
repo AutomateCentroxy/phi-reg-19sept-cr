@@ -1929,7 +1929,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "whenNode-ffb4369f-570c-44c9-8fe3-9ebac299437f",
@@ -1950,7 +1950,14 @@
 					"variableField": "",
 					"valueField": "",
 					"conditionInputField": "",
-					"conditions": [],
+					"conditions": [
+						{
+							"variable": "otpCode",
+							"operator": "is",
+							"dataValue": "null",
+							"combinator": "none"
+						}
+					],
 					"nodeIcon": "ph:swap",
 					"nodeColor": "",
 					"titleColor": "",
@@ -1963,7 +1970,8 @@
 			"measured": {
 				"width": 110,
 				"height": 60
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-fd1000d1-95d7-4b1f-a55f-bee7346d2a9b",
@@ -2058,8 +2066,8 @@
 				}
 			},
 			"measured": {
-				"width": 170,
-				"height": 124
+				"width": 168,
+				"height": 120
 			}
 		},
 		{
@@ -3420,8 +3428,8 @@
 		}
 	],
 	"viewport": {
-		"x": -2306.878631611294,
-		"y": -810.7128875058497,
-		"zoom": 0.764188260382583
+		"x": -3000.82544225181,
+		"y": -1010.0591239693426,
+		"zoom": 0.8802590135631505
 	}
 }
