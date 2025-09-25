@@ -481,44 +481,6 @@
 			"dragging": false
 		},
 		{
-			"id": "rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8",
-			"type": "rrfNode",
-			"position": {
-				"x": 5416.795908978336,
-				"y": 1536.8279080188966
-			},
-			"data": {
-				"id": "rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8",
-				"type": "rrfNode",
-				"position": {
-					"x": 3030,
-					"y": 880
-				},
-				"previousNodeId": "logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788",
-				"agamaData": {
-					"assignments": [],
-					"nodeIcon": "ph:globe-simple",
-					"templatePath": "acknowledgement.ftlh",
-					"asssignedVariableName": "acknowledgementInput",
-					"nodeColor": "",
-					"titleColor": "",
-					"descColor": "",
-					"displayName": "",
-					"hasComment": true,
-					"comment": "Show acknowledgement UI page for successful registration",
-					"arguments": [
-						""
-					]
-				}
-			},
-			"measured": {
-				"width": 170,
-				"height": 124
-			},
-			"selected": false,
-			"dragging": false
-		},
-		{
 			"id": "logNode-9f983eed-b40f-4907-af30-c04397e9a2ef",
 			"type": "logNode",
 			"position": {
@@ -2233,6 +2195,44 @@
 			"selected": false
 		},
 		{
+			"id": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
+			"type": "assignmentNode",
+			"position": {
+				"x": 5471.041494806046,
+				"y": 1531.5547556452213
+			},
+			"data": {
+				"id": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
+				"type": "assignmentNode",
+				"position": {
+					"x": 5471.041494806046,
+					"y": 1531.5547556452213
+				},
+				"previousNodeId": "logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788",
+				"agamaData": {
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"User Account created successfully!\"",
+							"assignedVariableName": "uiFeedback.infoMessage"
+						}
+					],
+					"nodeIcon": "material-symbols:equal",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": "\"User Account created successfully!\""
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 124
+			},
+			"selected": false
+		},
+		{
 			"id": "assignmentNode-83bcd9d9-bf0e-4eb2-bd27-fdce38e10ae8",
 			"type": "assignmentNode",
 			"position": {
@@ -2271,29 +2271,25 @@
 			"selected": false
 		},
 		{
-			"id": "assignmentNode-822f5423-2c71-4305-91de-28a10d51ef70",
-			"type": "assignmentNode",
+			"id": "rrfNode-876fc324-9f46-4b6e-b4c8-72b6c1f7e2f3",
+			"type": "rrfNode",
 			"position": {
-				"x": 5666.795908978336,
-				"y": 1536.8279080188966
+				"x": 5721.041494806046,
+				"y": 1531.5547556452213
 			},
 			"data": {
-				"id": "assignmentNode-822f5423-2c71-4305-91de-28a10d51ef70",
-				"type": "assignmentNode",
+				"id": "rrfNode-876fc324-9f46-4b6e-b4c8-72b6c1f7e2f3",
+				"type": "rrfNode",
 				"position": {
-					"x": 5666.795908978336,
-					"y": 1536.8279080188966
+					"x": 5721.041494806046,
+					"y": 1531.5547556452213
 				},
-				"previousNodeId": "rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8",
+				"previousNodeId": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
 				"agamaData": {
-					"assignments": [
-						{
-							"variableTypeCheck": true,
-							"assignmentExpression": "\"User Account created successfully!\"",
-							"assignedVariableName": "uiFeedback.infoMessage"
-						}
-					],
-					"nodeIcon": "material-symbols:equal",
+					"assignments": [],
+					"nodeIcon": "ph:globe-simple",
+					"templatePath": "acknowledgement.ftlh",
+					"asssignedVariableName": "acknowledgementInput",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
@@ -2479,24 +2475,6 @@
 			},
 			"labelShowBg": true,
 			"sourceHandle": "source_logNode-9f983eed-b40f-4907-af30-c04397e9a2ef"
-		},
-		{
-			"source": "logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788",
-			"sourceHandle": "source_logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788",
-			"target": "rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8",
-			"targetHandle": "target_rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8",
-			"label": "",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"id": "xy-edge__logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788source_logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788-rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8target_rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8"
 		},
 		{
 			"id": "callNode-e0397613-59c0-4299-b673-d3d21576d65d-whenNode-f6e375d5-6064-4609-89e8-b0943c226c08",
@@ -3404,10 +3382,10 @@
 			"sourceHandle": "source_logNode-64776aa5-0153-474b-a3e6-db4379554b50"
 		},
 		{
-			"id": "rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8-assignmentNode-822f5423-2c71-4305-91de-28a10d51ef70",
+			"id": "logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788-assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
 			"type": "default",
-			"source": "rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8",
-			"target": "assignmentNode-822f5423-2c71-4305-91de-28a10d51ef70",
+			"source": "logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788",
+			"target": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
 			"labelBgPadding": [
 				8,
 				4
@@ -3420,12 +3398,31 @@
 				"fillOpacity": 0.7
 			},
 			"labelShowBg": true,
-			"sourceHandle": "source_rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8"
+			"sourceHandle": "source_logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788"
+		},
+		{
+			"id": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae-rrfNode-876fc324-9f46-4b6e-b4c8-72b6c1f7e2f3",
+			"type": "default",
+			"source": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
+			"target": "rrfNode-876fc324-9f46-4b6e-b4c8-72b6c1f7e2f3",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae"
 		}
 	],
 	"viewport": {
-		"x": -6071.695804929873,
-		"y": -1509.489134376603,
-		"zoom": 1.1679673946131162
+		"x": -5073.130371437668,
+		"y": -1225.2546349347285,
+		"zoom": 1.0139594797900275
 	}
 }
