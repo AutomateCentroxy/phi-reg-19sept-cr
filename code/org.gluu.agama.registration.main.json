@@ -1412,14 +1412,14 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "callNode-4c24ad52-b67b-42d3-a28e-2ec35974c3ac",
 			"type": "callNode",
 			"position": {
-				"x": 1354.8413899359398,
-				"y": 823.9049928420101
+				"x": 1348.0252143472196,
+				"y": 828.4491099011568
 			},
 			"data": {
 				"id": "callNode-4c24ad52-b67b-42d3-a28e-2ec35974c3ac",
@@ -1432,24 +1432,30 @@
 				"branching": "success",
 				"agamaData": {
 					"javaClassName": "",
-					"javaMethodName": "",
-					"javaVariableName": "",
+					"javaMethodName": "sendEmail",
+					"javaVariableName": "userRegistrationService",
 					"exceptionVariableField": "",
-					"callType": "Call static method",
-					"arguments": [],
+					"callType": "Call method on instance",
+					"arguments": [
+						"email",
+						"lang"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "sent Email otp",
 					"hasComment": true,
-					"comment": ""
+					"comment": "sent Email otp",
+					"asssignedVariableName": "otpCode"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 124
-			}
+			},
+			"selected": true,
+			"dragging": false
 		}
 	],
 	"edges": [
@@ -2110,8 +2116,8 @@
 		}
 	],
 	"viewport": {
-		"x": 785.4345082834027,
-		"y": 381.53543183127243,
-		"zoom": 0.7641882603825831
+		"x": -879.6106587353772,
+		"y": -308.137229255031,
+		"zoom": 0.8802590135631507
 	}
 }
