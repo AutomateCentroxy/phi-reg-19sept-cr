@@ -1,8 +1,8 @@
 [#ftl output_format="HTML"]
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Email_OTP_Form
-	</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" type="text/css"></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>OTP Verification
+	</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></head>
 <body>
 
   
@@ -10,42 +10,56 @@
 	
 	
 	
-	
   
   
-	<div class="md:h-screen bg-white relative flex flex-col justify-center items-center">
-	  <div class="md:border md:border-gray-300 bg-white md:shadow-lg shadow-none rounded p-10 align-middle">
-		<div class="flex flex-col items-center space-y-3">
-		  <div class="flex">
-			<img src="https://gluu.org/wp-content/uploads/2020/12/logo.png">
+	<div class="otp-container">
+	  <div align="center" class="flex">
+		<img src="https://gluu.org/wp-content/uploads/2020/12/logo.png" alt="Logo" id="inh1m">
+	  </div>
+	  <div class="header">
+		<i class="fas fa-key">
+		</i>Email OTP Verification
+	  </div>
+	  <!-- ✅ Show Error Message -->
+	  [#if errorMessage?? &amp;&amp; errorMessage?length gt 0]
+	  <div role="alert" align="center" class="alert alert-danger mt-3 error">
+		<p>${errorMessage}
+		</p>
+	  </div>
+	  [/#if]
+	  [#if matches?? &amp;&amp; !matches]
+	  <div role="alert" align="center" class="alert alert-danger mt-3 error">
+		<p>Invalid OTP. Please try again.
+		</p>
+	  </div>
+	  [/#if]
+	  <div class="content">
+		<p class="text-center">A verification code has been sent to:
+		</p>
+		<p class="text-center email-display">${email}
+		</p>
+		<!-- OTP Submission Form -->
+		<form method="post" enctype="application/x-www-form-urlencoded">
+		  <div class="form-group">
+			<label for="passcode" class="form-label">Enter OTP: <span class="required">*</span></label>
+			<input type="text" id="passcode" name="passcode" pattern="[0-9]+" required="" placeholder="000000" class="form-control">
 		  </div>
-		  <span class="text-2xl font-semi-bold leading-normal">Email OTP Form</span>
-		  <!-- Error Message Block -->
-		  [#if errorMessage?has_content]
-		  <div role="alert" align="center" class="alert alert-danger mt-3 error">
-			<p>${errorMessage} 
-			</p>
+		  <div class="buttons">
+			<button type="submit" class="btn btn-primary">Continue</button>
 		  </div>
-		  [/#if]
-		  <p class="leading-normal">Enter the code we've sent through Email
+		</form>
+		<!-- Resend Code -->
+		<form method="post" enctype="application/x-www-form-urlencoded" class="resend-form">
+		  <p class="text-sm text-center mt-4">Didn't receive the code?
 		  </p>
-		</div>
-		<form method="post" class="mt-8">
-		  <div id="otp" class="flex flex-row justify-center text-center px-2 mt-5">
-			<input type="text" name="passcode" id="passcode" pattern="[0-9]+" placeholder="000000" autocomplete="off" required="" autofocus="" class="bg-gray-50 w-full rounded px-3 border border-gray-300 pt-2 pb-2 focus:border-green-700">
-		  </div>
-		  <div class="space-y-9 mt-4">
-			<div class="text-sm flex justify-center items-center">
-			  <button type="submit" class="py-2 px-6 rounded text-white btn bg-green-500 hover:bg-green-600">
-				Submit
-			  </button>
-			</div>
+		  <div align="center">
+			<button type="submit" name="resend" value="yes" class="btn btn-secondary resend-btn">Resend Code</button>
 		  </div>
 		</form>
 	  </div>
 	</div>
   
-
+  
 </body>
 <style>
 	body {
@@ -57,17 +71,85 @@
 	  height: 100vh;
 	  margin: 0;
 	}
+	.otp-container {
+	  width: 100%;
+	  max-width: 500px;
+	  background: white;
+	  border-radius: 5px;
+	  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	  overflow: hidden;
+	}
+	.header {
+	  background: #28a745;
+	  padding: 15px;
+	  color: white;
+	  font-size: 20px;
+	  font-weight: bold;
+	  display: flex;
+	  align-items: center;
+	}
+	.header i {
+	  margin-right: 10px;
+	}
+	.content {
+	  padding: 20px;
+	}
+	.form-group {
+	  margin-bottom: 15px;
+	}
+	.form-label {
+	  font-weight: bold;
+	  display: block;
+	  margin-bottom: 5px;
+	}
+	.form-control {
+	  width: 95%;
+	  padding: 10px;
+	  font-size: 14px;
+	  border: 1px solid #ced4da;
+	  border-radius: 5px;
+	}
 	.required {
 	  color: red;
 	}
-	.error-message {
-	  color: red;
-	  font-size: 13px;
-	  margin-top: 5px;
-	}
-	.error{
+	.error {
 	  font-weight: bold;
 	  color: red;
+	}
+	.email-display {
+	  font-weight: bold;
+	  color: #28a745;
+	  font-size: 16px;
+	  margin-bottom: 20px;
+	}
+	.buttons {
+	  margin-top: 20px;
+	  display: flex;
+	  justify-content: center;
+	}
+	.btn {
+	  padding: 10px 20px;
+	  font-size: 15px;
+	  border: none;
+	  border-radius: 5px;
+	  cursor: pointer;
+	}
+	.btn-primary {
+	  background-color: #007bff;
+	  color: white;
+	}
+	.btn-primary:hover {
+	  background-color: #0056b3;
+	}
+	.btn-secondary {
+	  background-color: #6c757d;
+	  color: white;
+	}
+	.btn-secondary:hover {
+	  background-color: #5a6268;
+	}
+	.resend-form {
+	  margin-top: 15px;
 	}
   </style>
 
