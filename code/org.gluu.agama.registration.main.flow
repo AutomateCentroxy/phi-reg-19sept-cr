@@ -15,6 +15,8 @@ Repeat 6 times max
      email = userInput.mail
      userName = userInput.uid
      userPassword = userInput.userPassword
+     residenceCountry = userInput.residenceCountry
+     phone = userInput.phoneNumber
      // Validate user inputs
      validation = Call userRegistrationService validateInputs userInput
      // Validation result log
@@ -36,8 +38,8 @@ Repeat 6 times max
                          // log for unsuccessful Email delivery
                          Log "@info Unable to deliver e-mail message"
                          // Unable to deliver e-mail message
-                         it_mdtxi = {success:false, error: "Unable to deliver e-mail message"}
-                         Finish it_mdtxi
+                         it_bhhog = {success:false, error: "Unable to deliver e-mail message"}
+                         Finish it_bhhog
                     // Re-try Matching OTP
                     Repeat 3 times max
                          // OTP input form
@@ -77,5 +79,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_ucyls = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_ucyls
+it_juepi = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_juepi
