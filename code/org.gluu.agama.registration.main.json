@@ -2232,13 +2232,13 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-663272da-5343-4957-80c4-ed11e646614e",
 			"type": "logNode",
 			"position": {
-				"x": 4348.02521434722,
+				"x": 4421.88462491558,
 				"y": 1144.4491099011568
 			},
 			"data": {
@@ -2250,13 +2250,13 @@
 				},
 				"previousNodeId": "assignmentNode-597dd1d8-e73d-41e6-a1f4-8e1590f8250a",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"E-mail verification passed, initiating user provisioning flow \" userInput",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "E-mail verification passed,",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -2264,7 +2264,9 @@
 			"measured": {
 				"width": 168,
 				"height": 120
-			}
+			},
+			"selected": true,
+			"dragging": false
 		},
 		{
 			"id": "logNode-64776aa5-0153-474b-a3e6-db4379554b50",
