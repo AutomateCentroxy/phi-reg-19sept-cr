@@ -72,10 +72,6 @@ Repeat 6 times max
                                         Log "@info User % has been created" inum
                                         // Show acknowledgement UI page for successful registration
                                         acknowledgementInput = RRF "acknowledgement.ftlh" 
-                                        // Finish the flow successfully
-                                        Log "@info SMS  Otp flow started"
-                                        // Finish the flow successfully
-                                        Finish userName
                                    // Registration failed log
                                    Log "@info User registration failed. Error : %" E
                               Otherwise
@@ -86,8 +82,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_nvxbb = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_nvxbb
+                    it_xvqfe = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_xvqfe
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -104,5 +100,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_pkavm = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_pkavm
+it_yzlet = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_yzlet
