@@ -1,5 +1,6 @@
 package org.gluu.agama.user;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.gluu.agama.registration.JansUserRegistration;
@@ -23,7 +24,11 @@ public abstract class UserRegistration {
 
     public abstract String markPhoneAsVerified(String userName);
     
-    public static UserRegistration getInstance(){
-        return  JansUserRegistration.getInstance();
-    }    
+    // public static UserRegistration getInstance(){
+    //     return  JansUserRegistration.getInstance();
+    // } 
+    
+    public static UserRegistration getInstance(HashMap config) {
+        return new JansUserRegistration(config);
+    }
 }
