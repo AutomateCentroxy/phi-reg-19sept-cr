@@ -19,11 +19,11 @@
 				"agamaData": {
 					"isTopLevelFlow": true,
 					"basepath": "",
-					"configParams": "{\n}",
+					"configParams": "{\n  \"ACCOUNT_SID\": \"PUT_YOUR_TWILIO_ACCOUNT_SID_HERE\",\n  \"AUTH_TOKEN\": \"PUT_YOUR_TWILIO_AUTH_TOKEN_HERE\",\n  \"FROM_NUMBER\": \"PUT_YOUR_TWILIO_FROM_NUMBER_HERE\"\n}",
 					"nodeIcon": "material-symbols:line-start-square",
-					"timeout": "360",
+					"timeout": "30000",
 					"inputs": "",
-					"configs": "",
+					"configs": "conf",
 					"flowname": "org.gluu.agama.registration.main",
 					"displayName": "org.gluu.agama.registration.main",
 					"creationDate": "07/02/2025",
@@ -35,7 +35,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -3227,7 +3227,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -4980,8 +4980,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3739.8161859136953,
-		"y": -813.4447159184605,
-		"zoom": 0.5
+		"x": 2797.612622907621,
+		"y": 722.2652976232913,
+		"zoom": 1.3453672085218258
 	}
 }
