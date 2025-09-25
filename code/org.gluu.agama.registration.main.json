@@ -1840,21 +1840,22 @@
 				"previousNodeId": "whenNode-99fb3eef-f81e-4f9c-a156-bce0bed2d819",
 				"branching": "otherwise",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"OTP provided by the user \" ",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "\"OTP provided by the user \" "
 				}
 			},
 			"measured": {
 				"width": 168,
 				"height": 120
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-c11d9dc0-528e-475f-bd7c-c835c64cf226",
@@ -2116,7 +2117,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "whenNode-9977d56f-55a1-4704-95e0-cfbb2b38bb31",
@@ -2150,7 +2151,8 @@
 			"measured": {
 				"width": 110,
 				"height": 60
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "logNode-0c47b1c3-9a5d-4269-99bd-63bf49268021",
@@ -3445,8 +3447,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3000.82544225181,
-		"y": -1010.0591239693426,
-		"zoom": 0.8802590135631505
+		"x": -1825.1901050483125,
+		"y": -408.05451759198365,
+		"zoom": 0.6634225702985805
 	}
 }
