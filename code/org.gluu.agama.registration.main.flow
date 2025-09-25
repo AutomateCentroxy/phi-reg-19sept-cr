@@ -44,12 +44,13 @@ Repeat 6 times max
                          // uiFeedback.email/matches
                          uiFeedback.email = email
                          uiFeedback.matches = true
-                         RRF "__________" 
+                         //  Show UI to collect OTP code from user.
+                         emailOtpCreds = RRF "otp.ftlh" uiFeedback
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_mfkvi = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_mfkvi
+                    it_sbdjl = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_sbdjl
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -66,5 +67,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_mptnm = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_mptnm
+it_whgjw = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_whgjw
