@@ -55,13 +55,38 @@ public class JansUserRegistration extends UserRegistration {
 
     private static JansUserRegistration INSTANCE = null;
 
-    public JansUserRegistration() {}
+    // public JansUserRegistration() {}
 
-    public static synchronized JansUserRegistration getInstance()
-    {
-        if (INSTANCE == null)
-            INSTANCE = new JansUserRegistration();
+    // public static synchronized JansUserRegistration getInstance()
+    // {
+    //     if (INSTANCE == null)
+    //         INSTANCE = new JansUserRegistration();
 
+    //     return INSTANCE;
+    // }
+
+    private final Map<String, String> emailOtpStore = new HashMap<>();
+
+    // private HashMap<String, String> userCodes = new HashMap<>();
+    private static final Map<String, String> userCodes = new HashMap<>();
+
+    // ✅ No-arg constructor (required by Agama/CDI)
+    public JansUserRegistration() {
+        this.flowConfig = new HashMap<>();
+        logger.info("Initialized JansUserRegistration using default constructor (no config).");
+    }
+
+    // ✅ Constructor used by getInstance()
+    private JansUserRegistration(Map config) {
+        this.flowConfig = config;
+        logger.info("Using Twilio account SID: {}", config.get("ACCOUNT_SID"));
+    }
+
+    // ✅ Singleton accessor
+    public static UserRegistration getInstance(Map config) {
+        if (INSTANCE == null) {
+            INSTANCE = new JansUserRegistration(config);
+        }
         return INSTANCE;
     }
 
