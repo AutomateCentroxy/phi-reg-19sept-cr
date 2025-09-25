@@ -64,6 +64,21 @@
 							"variableTypeCheck": true,
 							"assignmentExpression": "{}",
 							"assignedVariableName": "emailObj"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "true",
+							"assignedVariableName": "sendMail"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "{matches: true, resent: false}",
+							"assignedVariableName": "uiInput"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"\"",
+							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -72,14 +87,14 @@
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": "Create  variable for UI feedback"
+					"comment": "Create  variable for UCreate  variable for UI feedbackI feedback"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 124
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -734,7 +749,9 @@
 					"javaVariableName": "",
 					"exceptionVariableField": "",
 					"callType": "Call static method",
-					"arguments": [],
+					"arguments": [
+						"conf"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
@@ -4536,8 +4553,8 @@
 		}
 	],
 	"viewport": {
-		"x": -940.5227491278847,
-		"y": 569.9240561788254,
-		"zoom": 0.5
+		"x": 1986.257182005688,
+		"y": 613.093818857915,
+		"zoom": 1.0139594797900289
 	}
 }
