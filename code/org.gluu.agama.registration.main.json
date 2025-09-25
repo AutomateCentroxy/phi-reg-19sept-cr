@@ -2194,7 +2194,7 @@
 				"width": 168,
 				"height": 120
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-597dd1d8-e73d-41e6-a1f4-8e1590f8250a",
@@ -2212,12 +2212,18 @@
 				},
 				"previousNodeId": "logNode-0c47b1c3-9a5d-4269-99bd-63bf49268021",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "true",
+							"assignedVariableName": "EmailOtpValidationResult"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "EmailOtpValidationResult",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -2225,7 +2231,8 @@
 			"measured": {
 				"width": 170,
 				"height": 124
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-663272da-5343-4957-80c4-ed11e646614e",
@@ -2255,8 +2262,8 @@
 				}
 			},
 			"measured": {
-				"width": 170,
-				"height": 124
+				"width": 168,
+				"height": 120
 			}
 		},
 		{
