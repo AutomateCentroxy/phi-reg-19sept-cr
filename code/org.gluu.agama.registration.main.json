@@ -570,7 +570,7 @@
 				"previousNodeId": "rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8",
 				"branching": "success",
 				"agamaData": {
-					"logMessage": "\"Finish the flow successfully\"",
+					"logMessage": "\"SMS  Otp flow started\"",
 					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
@@ -585,7 +585,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -2265,7 +2265,7 @@
 				"width": 168,
 				"height": 120
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -3473,8 +3473,8 @@
 		}
 	],
 	"viewport": {
-		"x": -2349.190105048312,
-		"y": -510.05451759198377,
-		"zoom": 0.6634225702985805
+		"x": -4124.999778342351,
+		"y": -959.8731055188757,
+		"zoom": 0.8802590135631502
 	}
 }
