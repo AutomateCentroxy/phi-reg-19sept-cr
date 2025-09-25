@@ -106,7 +106,8 @@ Repeat 6 times max
                                                        phoneVerified = Call userRegistrationService markPhoneAsVerified userName
                                                        // Show acknowledgement UI page for successful registration
                                                        acknowledgementInput = RRF "acknowledgement.ftlh" 
-                                                       Log "@ " __________
+                                                       // Finish the flow successfully
+                                                       Log "@info Finish the flow successfully"
                                                        Finish __________
                                                   Otherwise
                                                        // The maximum number of attempt has been reached.
@@ -126,8 +127,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_coqpm = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_coqpm
+                    it_nfvtr = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_nfvtr
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -144,5 +145,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_mdshn = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_mdshn
+it_wkvps = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_wkvps
