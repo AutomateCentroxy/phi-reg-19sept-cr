@@ -2484,7 +2484,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-fd1cbae4-f200-43f3-b10c-bcbd6693965f",
@@ -2503,8 +2503,8 @@
 				"previousNodeId": "repeatNode-1f92a57d-e901-466c-9aa5-393e1a264e45",
 				"branching": "continue",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"OTP verification loop completed\"",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
@@ -2517,7 +2517,8 @@
 			"measured": {
 				"width": 170,
 				"height": 124
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-4504bb78-fd20-4fd6-a80b-4233c67f0730",
@@ -2535,12 +2536,18 @@
 				},
 				"previousNodeId": "logNode-fd1cbae4-f200-43f3-b10c-bcbd6693965f",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "{ success: false, error: \"ExceededTheNumberOfAttemptsAllowed\" }",
+							"assignedVariableName": "it_otpmax"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Max SMS Otp tried",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -2548,7 +2555,8 @@
 			"measured": {
 				"width": 170,
 				"height": 124
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "finishNode-126fa6ea-2bef-40ad-92fa-78233083794d",
@@ -2786,8 +2794,8 @@
 				}
 			},
 			"measured": {
-				"width": 170,
-				"height": 124
+				"width": 168,
+				"height": 120
 			}
 		},
 		{
