@@ -54,6 +54,9 @@ public class JansUserRegistration extends UserRegistration {
     private static final SecureRandom RAND = new SecureRandom();
 
     private static JansUserRegistration INSTANCE = null;
+    private Map<String, String> flowConfig;
+    private final Map<String, String> emailOtpStore = new HashMap<>();
+    private static final Map<String, String> userCodes = new HashMap<>();
 
     //  No-arg constructor
     public JansUserRegistration() {
