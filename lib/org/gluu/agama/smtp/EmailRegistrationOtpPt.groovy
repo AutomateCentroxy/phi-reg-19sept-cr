@@ -27,9 +27,9 @@ class EmailRegistrationOtpPt {
                   <tbody>
                     <tr>
                       <td style="padding:45px;font-family:'Nunito Sans',Helvetica,Arial,sans-serif;color:#51545E;font-size:16px;line-height:1.625;">
-                        <p>OlÃ¡,</p>
+                        <p>Olá,</p>
 
-                        <p>Insira o cÃ³digo de 6 dÃ­gitos abaixo para verificar seu endereÃ§o de e-mail.</p>
+                        <p>Insira o código de 6 dígitos abaixo para verificar seu endereço de e-mail.</p>
 
                         <div style="text-align:center;margin:30px 0;">
                           <div style="display:inline-block;background-color:#f5f5f5;color:#AD9269;font-size:40px;font-weight:600;letter-spacing:6px;padding:10px 20px;border-radius:4px;">
@@ -37,8 +37,8 @@ class EmailRegistrationOtpPt {
                           </div>
                         </div>
 
-                        <p>Se nÃ£o foi vocÃª que fez este pedido, pode ignorar esta mensagem com seguranÃ§a. A sua conta continuarÃ¡ segura.</p>
-                        <p>Obrigado pela sua confianÃ§a.</p>
+                        <p>Se não foi você que fez este pedido, pode ignorar esta mensagem com segurança. A sua conta continuará segura.</p>
+                        <p>Obrigado pela sua confiança.</p>
 
                         <p style="margin-top:30px;">Com os melhores cumprimentos,</p>
                         <p style="margin-top:30px;">Equipe Phi Wallet</p>
@@ -86,7 +86,7 @@ class EmailRegistrationOtpPt {
 """;
 
         return Map.of(
-            "subject", "CÃ³digo de verificaÃ§Ã£o - Phi Wallet",
+            "subject", "Código de verificação - Phi Wallet",
             "body", html
         );
     }
