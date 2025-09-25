@@ -1559,7 +1559,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-397853b0-40ad-4139-ab73-8ce58541e3d8",
@@ -1578,12 +1578,18 @@
 				"previousNodeId": "repeatNode-ec975954-570a-4761-930b-43296f792ac3",
 				"branching": "continue",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"You have reached the maximun email OTP verification\"",
+							"assignedVariableName": "uiFeedback.errorMessage"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Max attempted",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -1591,7 +1597,8 @@
 			"measured": {
 				"width": 170,
 				"height": 124
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-27a88dfd-7718-4a62-9590-038af99c3ce5",
@@ -1686,8 +1693,8 @@
 				}
 			},
 			"measured": {
-				"width": 170,
-				"height": 124
+				"width": 168,
+				"height": 120
 			}
 		},
 		{
