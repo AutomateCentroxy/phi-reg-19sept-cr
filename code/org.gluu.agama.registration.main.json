@@ -2179,13 +2179,13 @@
 				"previousNodeId": "whenNode-9977d56f-55a1-4704-95e0-cfbb2b38bb31",
 				"branching": "success",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Email Otp Verified\"",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Email Otp Verified",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -2193,7 +2193,8 @@
 			"measured": {
 				"width": 168,
 				"height": 120
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "assignmentNode-597dd1d8-e73d-41e6-a1f4-8e1590f8250a",
@@ -2290,7 +2291,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-83bcd9d9-bf0e-4eb2-bd27-fdce38e10ae8",
