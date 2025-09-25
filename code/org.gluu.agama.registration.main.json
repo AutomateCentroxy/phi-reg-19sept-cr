@@ -1665,7 +1665,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -1685,21 +1685,22 @@
 				"previousNodeId": "repeatNode-ec975954-570a-4761-930b-43296f792ac3",
 				"branching": "repeat",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Email OTP verification loop Started\"",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Email loop Started",
 					"hasComment": true,
-					"comment": ""
+					"comment": "\"Email OTP verification loop Started\""
 				}
 			},
 			"measured": {
 				"width": 168,
 				"height": 120
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-bf52f602-80da-41fa-9f04-6d32e5c130a5",
@@ -1717,20 +1718,33 @@
 				},
 				"previousNodeId": "logNode-7ba6e718-b44d-431f-a805-e775bd3325ff",
 				"agamaData": {
-					"assignments": [],
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "email",
+							"assignedVariableName": "uiFeedback.email"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "true",
+							"assignedVariableName": "uiFeedback.matches"
+						}
+					],
 					"nodeIcon": "material-symbols:equal",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "uiFeedback.email/matches"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 124
-			}
+			},
+			"selected": true,
+			"dragging": false
 		},
 		{
 			"id": "rrfNode-ac10a51d-fcb7-4317-b5c4-45d48131fa7e",
@@ -2595,8 +2609,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1336.610658735377,
-		"y": -586.1372292550309,
+		"x": -1665.610658735377,
+		"y": -633.1372292550309,
 		"zoom": 0.8802590135631507
 	}
 }
