@@ -58,7 +58,8 @@ Repeat 6 times max
                               // Provide feedback about the error message to user.
                               uiFeedback.errorMessage = "A new OTP code has been send to you on your Email"
                          Otherwise
-                              Log "@ " __________
+                              // "OTP provided by the user " 
+                              Log "@info OTP provided by the user " 
                               When 
                                    Log "@ " __________
                                    Log "@ " __________
@@ -81,8 +82,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_vctpk = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_vctpk
+                    it_rzmhp = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_rzmhp
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -99,5 +100,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_pkubb = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_pkubb
+it_xtqqq = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_xtqqq
