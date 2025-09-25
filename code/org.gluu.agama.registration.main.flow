@@ -51,5 +51,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_zuqlx = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_zuqlx
+it_hcvgm = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_hcvgm
