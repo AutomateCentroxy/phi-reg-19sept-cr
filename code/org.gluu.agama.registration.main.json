@@ -3295,7 +3295,7 @@
 				"width": 168,
 				"height": 120
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "finishNode-533a2b9c-0403-48a2-8300-a3b5219467c0",
@@ -3320,14 +3320,16 @@
 					"hasComment": true,
 					"comment": "",
 					"flowfilename": "",
-					"returnVariable": "",
+					"returnVariable": "userName",
+					"finishMode": "withVariable",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 124
-			}
+			},
+			"selected": true
 		}
 	],
 	"edges": [
@@ -4978,8 +4980,8 @@
 		}
 	],
 	"viewport": {
-		"x": -8760.88219626756,
-		"y": -1744.519641362007,
-		"zoom": 1.0139594797900287
+		"x": -7412.0162087743465,
+		"y": -1470.3146547528518,
+		"zoom": 0.8802590135631504
 	}
 }
