@@ -519,76 +519,6 @@
 			"dragging": false
 		},
 		{
-			"id": "finishNode-782aa61d-c830-4605-8a09-95f9b81f264b",
-			"type": "finishNode",
-			"position": {
-				"x": 5860.807776013147,
-				"y": 1534.6473819019636
-			},
-			"data": {
-				"id": "finishNode-782aa61d-c830-4605-8a09-95f9b81f264b",
-				"type": "finishNode",
-				"position": {
-					"x": 3531,
-					"y": 1081
-				},
-				"previousNodeId": "logNode-97b4346d-abae-4852-a5cd-ad05f1273f3c",
-				"agamaData": {
-					"nodeColor": "",
-					"titleColor": "",
-					"descColor": "",
-					"displayName": "",
-					"hasComment": true,
-					"comment": "Finish the flow successfully",
-					"flowfilename": "",
-					"returnVariable": "userName",
-					"finishMode": "withVariable",
-					"nodeIcon": "material-symbols:line-end-square-rounded"
-				}
-			},
-			"measured": {
-				"width": 170,
-				"height": 124
-			},
-			"selected": false,
-			"dragging": false
-		},
-		{
-			"id": "logNode-97b4346d-abae-4852-a5cd-ad05f1273f3c",
-			"type": "logNode",
-			"position": {
-				"x": 5629.745797898905,
-				"y": 1538.369512883394
-			},
-			"data": {
-				"id": "logNode-97b4346d-abae-4852-a5cd-ad05f1273f3c",
-				"type": "logNode",
-				"position": {
-					"x": 3531,
-					"y": 1081
-				},
-				"previousNodeId": "rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8",
-				"branching": "success",
-				"agamaData": {
-					"logMessage": "\"SMS  Otp flow started\"",
-					"logLevel": "info",
-					"nodeIcon": "octicon:log-16",
-					"nodeColor": "",
-					"titleColor": "",
-					"descColor": "",
-					"displayName": "",
-					"hasComment": true,
-					"comment": "Finish the flow successfully"
-				}
-			},
-			"measured": {
-				"width": 170,
-				"height": 124
-			},
-			"selected": true,
-			"dragging": false
-		},
-		{
 			"id": "logNode-9f983eed-b40f-4907-af30-c04397e9a2ef",
 			"type": "logNode",
 			"position": {
@@ -2513,42 +2443,6 @@
 			"sourceHandle": "source_logNode-9f983eed-b40f-4907-af30-c04397e9a2ef"
 		},
 		{
-			"source": "logNode-97b4346d-abae-4852-a5cd-ad05f1273f3c",
-			"sourceHandle": "source_logNode-97b4346d-abae-4852-a5cd-ad05f1273f3c",
-			"target": "finishNode-782aa61d-c830-4605-8a09-95f9b81f264b",
-			"targetHandle": "target_finishNode-782aa61d-c830-4605-8a09-95f9b81f264b",
-			"label": "",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"id": "xy-edge__logNode-97b4346d-abae-4852-a5cd-ad05f1273f3csource_logNode-97b4346d-abae-4852-a5cd-ad05f1273f3c-finishNode-782aa61d-c830-4605-8a09-95f9b81f264btarget_finishNode-782aa61d-c830-4605-8a09-95f9b81f264b"
-		},
-		{
-			"source": "rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8",
-			"sourceHandle": "source_rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8",
-			"target": "logNode-97b4346d-abae-4852-a5cd-ad05f1273f3c",
-			"targetHandle": "target_logNode-97b4346d-abae-4852-a5cd-ad05f1273f3c",
-			"label": "",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"id": "xy-edge__rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8source_rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8-logNode-97b4346d-abae-4852-a5cd-ad05f1273f3ctarget_logNode-97b4346d-abae-4852-a5cd-ad05f1273f3c"
-		},
-		{
 			"source": "logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788",
 			"sourceHandle": "source_logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788",
 			"target": "rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8",
@@ -3473,8 +3367,8 @@
 		}
 	],
 	"viewport": {
-		"x": -4124.999778342351,
-		"y": -959.8731055188757,
-		"zoom": 0.8802590135631502
+		"x": -5969.695804929873,
+		"y": -1504.489134376603,
+		"zoom": 1.1679673946131162
 	}
 }
