@@ -8,6 +8,8 @@ import io.jans.service.MailService;
 import io.jans.model.SmtpConfiguration;
 import io.jans.service.cdi.util.CdiUtil;
 import io.jans.util.StringHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.gluu.agama.user.UserRegistration;
 import io.jans.agama.engine.script.LogUtils;
@@ -30,6 +32,8 @@ import com.twilio.type.PhoneNumber;
 
 
 public class JansUserRegistration extends UserRegistration {
+
+    private static final Logger logger = LoggerFactory.getLogger(JansUserRegistration.class);
     
     private static final String SN = "sn";
     private static final String CONFIRM_PASSWORD = "confirmPassword";
@@ -52,6 +56,7 @@ public class JansUserRegistration extends UserRegistration {
     private static final String SUBJECT_TEMPLATE = "Here's your verification code: %s";
     private static final String MSG_TEMPLATE_TEXT = "%s is the code to complete your verification";   
     private static final SecureRandom RAND = new SecureRandom();
+    
 
     private static JansUserRegistration INSTANCE = null;
     private Map<String, String> flowConfig;
