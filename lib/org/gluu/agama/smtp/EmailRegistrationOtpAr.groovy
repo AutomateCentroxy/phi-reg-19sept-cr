@@ -27,9 +27,9 @@ class EmailRegistrationOtpAr {
                   <tbody>
                     <tr>
                       <td style="padding:45px;font-family:'Nunito Sans',Helvetica,Arial,sans-serif;color:#51545E;font-size:16px;line-height:1.625;">
-                        <p dir="rtl">ÙØ±Ø­Ø¨ÙØ§Ø</p>
-                        <p>ÙÙØ¯ ØªÙÙÙÙÙØ§ Ø·ÙØ¨ÙØ§ ÙØ¥Ø¹Ø§Ø¯Ø© ØªØ¹ÙÙÙ ÙÙÙØ© Ø§ÙÙØ±ÙØ± ÙØ­Ø³Ø§Ø¨Ù ÙÙ Phi Wallet.</p>
-                        <p>ÙÙÙØªØ§Ø¨Ø¹Ø©Ø ÙØ±Ø¬Ù Ø¥Ø¯Ø®Ø§Ù Ø±ÙØ² Ø§ÙØªØ­ÙÙ Ø§ÙØªØ§ÙÙ:</p>
+                        <p dir="rtl">مرحبًا،</p>
+                        <p>لقد تلقّينا طلبًا لإعادة تعيين كلمة المرور لحسابك في Phi Wallet.</p>
+                        <p>للمتابعة، يرجى إدخال رمز التحقق التالي:</p>
 
                         <div style="text-align:center;margin:30px 0;">
                           <div style="display:inline-block;background-color:#f5f5f5;color:#AD9269;font-size:40px;font-weight:600;letter-spacing:6px;padding:10px 20px;border-radius:4px;">
@@ -37,10 +37,10 @@ class EmailRegistrationOtpAr {
                           </div>
                         </div>
 
-                        <p>Ø¥Ø°Ø§ ÙÙ ØªØ·ÙØ¨ ÙØ°Ø§ Ø§ÙØ¥Ø¬Ø±Ø§Ø¡Ø ÙÙÙÙÙ ØªØ¬Ø§ÙÙ ÙØ°Ù Ø§ÙØ±Ø³Ø§ÙØ© Ø¨Ø£ÙØ§Ù. Ø³ÙØ¨ÙÙ Ø­Ø³Ø§Ø¨Ù Ø¢ÙÙÙÙØ§.</p>
-                        <p>Ø´ÙØ±ÙØ§ ÙØ«ÙØªÙ Ø¨ÙØ§.</p>
+                        <p>إذا لم تطلب هذا الإجراء، يمكنك تجاهل هذه الرسالة بأمان. سيبقى حسابك آمِنًا.</p>
+                        <p>شكرًا لثقتك بنا.</p>
 
-                        <p style="margin-top:30px;">ÙØ¹ Ø§ÙØªØ­ÙØ©Ø<br>ÙØ±ÙÙ Phi Wallet</p>
+                        <p style="margin-top:30px;">مع التحية،<br>فريق Phi Wallet</p>
 
                       </td>
                     </tr>
@@ -85,7 +85,7 @@ class EmailRegistrationOtpAr {
 """;
 
         return Map.of(
-            "subject", "Ø±ÙØ² Ø§ÙØªØ­ÙÙ Ø§ÙØ®Ø§Øµ Ø¨Ù - Phi Wallet",
+            "subject", "رمز التحقق الخاص بك - Phi Wallet",
             "body", html
         );
     }
