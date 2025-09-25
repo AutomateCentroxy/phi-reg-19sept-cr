@@ -78,6 +78,7 @@ Repeat 6 times max
                                         smsOtpSend = Call userRegistrationService sendOTPCode phone
                                         // The OTP Code has been send to user.
                                         Log "@info OTP generated and send to: " phone
+                                        otpValidationResult = false
                                         Repeat __________ times max
                                              RRF "__________" 
                                              When 
@@ -109,8 +110,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_ckxpl = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_ckxpl
+                    it_ugdnb = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_ugdnb
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -127,5 +128,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_bbxxi = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_bbxxi
+it_wkoyi = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_wkoyi
