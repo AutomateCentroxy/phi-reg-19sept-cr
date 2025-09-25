@@ -2845,7 +2845,7 @@
 					"descColor": "",
 					"displayName": "Resend otp",
 					"hasComment": true,
-					"comment": "",
+					"comment": "resendHasSucceed",
 					"asssignedVariableName": "resendHasSucceed"
 				}
 			},
@@ -2982,8 +2982,8 @@
 				}
 			},
 			"measured": {
-				"width": 170,
-				"height": 124
+				"width": 168,
+				"height": 120
 			}
 		},
 		{
