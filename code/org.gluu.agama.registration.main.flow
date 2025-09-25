@@ -38,6 +38,9 @@ Repeat 6 times max
                     Log "@info OTP generated and send to: " email
                     // EmailOtpValidationResult = flase
                     EmailOtpValidationResult = false
+                    Repeat __________ times max
+                    Log "@ " __________
+                    Finish __________
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -54,5 +57,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_ubdmd = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_ubdmd
+it_cpzyy = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_cpzyy
