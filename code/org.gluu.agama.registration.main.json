@@ -2043,7 +2043,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-2d64fef3-1f8e-490d-ba22-15b968ad4e59",
@@ -2062,13 +2062,13 @@
 				"previousNodeId": "whenNode-ffb4369f-570c-44c9-8fe3-9ebac299437f",
 				"branching": "success",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Fail to resend new code to user. \" otpCode",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "",
+					"displayName": "Log error code",
 					"hasComment": true,
 					"comment": ""
 				}
@@ -2076,7 +2076,8 @@
 			"measured": {
 				"width": 168,
 				"height": 120
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "assignmentNode-f2f8b610-af5f-4550-88a6-80a9fa4b580e",
