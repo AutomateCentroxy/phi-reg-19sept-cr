@@ -3262,7 +3262,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-7e1bba4e-38ad-48c1-a09b-ef8cfa0e38d9",
@@ -3280,21 +3280,22 @@
 				},
 				"previousNodeId": "rrfNode-13199a8b-eb47-4fc4-9710-f9b34af53407",
 				"agamaData": {
-					"logMessage": "",
-					"logLevel": "",
+					"logMessage": "\"Finish the flow successfully\"",
+					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": ""
+					"comment": "Finish the flow successfully"
 				}
 			},
 			"measured": {
 				"width": 168,
 				"height": 120
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "finishNode-533a2b9c-0403-48a2-8300-a3b5219467c0",
@@ -4977,8 +4978,8 @@
 		}
 	],
 	"viewport": {
-		"x": -8614.88219626756,
-		"y": -1728.5196413620067,
+		"x": -8760.88219626756,
+		"y": -1744.519641362007,
 		"zoom": 1.0139594797900287
 	}
 }
