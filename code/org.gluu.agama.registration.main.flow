@@ -78,14 +78,15 @@ Repeat 6 times max
                                    // Registration failed log
                                    Log "@info User registration failed. Error : %" E
                               Otherwise
+                                   // Invalid OTP
                                    Log "@info Invalid OTP, Please Try Again!"
                                    // "Invalid OTP, Please Try Again!"
                                    uiFeedback.infoMessage = "Invalid OTP, Please Try Again!"
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_kdwqb = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_kdwqb
+                    it_punit = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_punit
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -102,5 +103,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_sjfiw = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_sjfiw
+it_rvgsq = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_rvgsq
