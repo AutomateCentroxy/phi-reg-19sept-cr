@@ -77,6 +77,15 @@ Repeat 6 times max
                                         // sent sms otp
                                         smsOtpSend = Call userRegistrationService sendOTPCode phone
                                         Log "@ " __________
+                                        Repeat __________ times max
+                                             RRF "__________" 
+                                             When 
+                                             Otherwise
+                                                  Log "@ " __________
+                                                  Call __________#__________ 
+                                                  Log "@ " __________
+                                        Log "@ " __________
+                                        Finish __________
                                    // Registration failed log
                                    Log "@info User registration failed. Error : %" E
                               Otherwise
@@ -87,8 +96,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_dcoad = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_dcoad
+                    it_zpklx = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_zpklx
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -105,5 +114,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_gioda = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_gioda
+it_jgdry = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_jgdry
