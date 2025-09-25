@@ -16,6 +16,12 @@ public abstract class UserRegistration {
     // public abstract boolean passwordPolicyMatch(String userPassword);
 
     public abstract String sendEmail(String to, String lang);
+
+    public abstract String sendOTPCode(String phone);
+
+    public abstract boolean validateOTPCode(String phone, String code);
+
+    public abstract String markPhoneAsVerified(String userName);
     
     public static UserRegistration getInstance(){
         return  JansUserRegistration.getInstance();
