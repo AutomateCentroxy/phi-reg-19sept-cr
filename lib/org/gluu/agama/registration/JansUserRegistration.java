@@ -398,7 +398,7 @@ public class JansUserRegistration extends UserRegistration {
             }
 
             // 🔑 Just set to true
-            user.setAttribute(PHONE_VERIFIED, "true");
+            user.setAttribute(PHONE_VERIFIED, Boolean.TRUE);
 
             userService.updateUser(user);
             logger.info("Phone verification set to TRUE for UID {}", userName);
