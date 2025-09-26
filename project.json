@@ -2,7 +2,7 @@
     "projectName": "agama-registration",
     "description": "Designing an Agama Flow for seamless user registration with validation and authentication.",
     "type": "community",
-    "author": "GluuFederation",
+    "author": "phi-wallet",
     "version": "1.0.18",
     "authorWebsite": "https://github.com/GluuFederation/agama-registration",
     "githubUri": "https://github.com/GluuFederation/agama-registration",
