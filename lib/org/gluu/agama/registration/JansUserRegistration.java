@@ -373,8 +373,8 @@ public class JansUserRegistration extends UserRegistration {
         });
 
         // defaults
-        user.setAttribute("emailVerified", "true");
-        user.setAttribute("phoneNumberVerified", "false");
+        user.setAttribute("emailVerified", Boolean.TRUE);
+        user.setAttribute("phoneNumberVerified", Boolean.FALSE);
 
         UserService userService = CdiUtil.bean(UserService.class);
         user = userService.addUser(user, true); // Set user status active
