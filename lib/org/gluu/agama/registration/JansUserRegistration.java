@@ -53,6 +53,7 @@ public class JansUserRegistration extends UserRegistration {
     private static final String EMAIL_VERIFIED = "emailVerified";
     private static final String PHONE_VERIFIED = "phoneNumberVerified";
     private static final int OTP_LENGTH = 6;
+    public static final int OTP_CODE_LENGTH = 6;
     private static final String SUBJECT_TEMPLATE = "Here's your verification code: %s";
     private static final String MSG_TEMPLATE_TEXT = "%s is the code to complete your verification";   
     private static final SecureRandom RAND = new SecureRandom();
