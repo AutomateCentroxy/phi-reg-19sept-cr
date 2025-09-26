@@ -35,7 +35,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -932,8 +932,8 @@
 			"id": "assignmentNode-a9ff91d7-9723-4635-b8aa-0618b9bed5c9",
 			"type": "assignmentNode",
 			"position": {
-				"x": 429.8695955799331,
-				"y": -296.70302900113285
+				"x": 819.869595579933,
+				"y": -346.70302900113285
 			},
 			"data": {
 				"id": "assignmentNode-a9ff91d7-9723-4635-b8aa-0618b9bed5c9",
@@ -965,7 +965,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -4442,8 +4442,8 @@
 		}
 	],
 	"viewport": {
-		"x": 571.0295648775354,
-		"y": 363.42772888520983,
+		"x": 429.02956487753545,
+		"y": 295.42772888520983,
 		"zoom": 0.5
 	}
 }
