@@ -78,7 +78,8 @@ public class JansUserRegistration extends UserRegistration {
     //  No-arg singleton accessor (required by engine)
     public static synchronized UserRegistration getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new JansUserRegistration();
+            Map<String, String> config = loadTwilioConfig();
+            INSTANCE = new JansUserRegistration(config);
         }
         return INSTANCE;
     }
@@ -281,13 +282,13 @@ public class JansUserRegistration extends UserRegistration {
             logger.info("Generated OTP {} for phone {}", otpCode, phone);
 
             String message = "Welcome to AgamaLab. This is your OTP Code: " + otpCode;
-            // Store OTP mapped to phone (not username)
+
             associateGeneratedCodeToPhone(phone, otpCode);
-            // You can pass `null` or "anonymous" instead of username
+
             sendTwilioSms(phone, message);
             return phone; // Return phone if successful
         } catch (Exception ex) {
-            logger.error("Failed to send OTP to phone: {}. Error: {}", phone);
+            logger.error("Failed to send OTP to phone: {}. Error: {}", phone, ex.getMessage(), ex);
             return null;
         }
 
