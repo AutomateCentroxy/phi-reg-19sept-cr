@@ -8,6 +8,8 @@ import io.jans.service.MailService;
 import io.jans.model.SmtpConfiguration;
 import io.jans.service.cdi.util.CdiUtil;
 import io.jans.util.StringHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.gluu.agama.user.UserRegistration;
 import io.jans.agama.engine.script.LogUtils;
@@ -19,13 +21,19 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.regex.Pattern;
 
-import org.gluu.agama.EmailTemplate;
-import org.gluu.agama.registration.Labels;
+// import org.gluu.agama.EmailTemplate;
+// import org.gluu.agama.registration.Labels;
+import org.gluu.agama.smtp.*;
 
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
 
 
 
 public class JansUserRegistration extends UserRegistration {
+
+    private static final Logger logger = LoggerFactory.getLogger(JansUserRegistration.class);
     
     private static final String SN = "sn";
     private static final String CONFIRM_PASSWORD = "confirmPassword";
@@ -42,45 +50,49 @@ public class JansUserRegistration extends UserRegistration {
     private static final String EXT_ATTR = "jansExtUid";
     private static final String USER_STATUS = "jansStatus";
     private static final String EXT_UID_PREFIX = "github:";
+    private static final String EMAIL_VERIFIED = "emailVerified";
+    private static final String PHONE_VERIFIED = "phoneNumberVerified";
     private static final int OTP_LENGTH = 6;
+    public static final int OTP_CODE_LENGTH = 6;
     private static final String SUBJECT_TEMPLATE = "Here's your verification code: %s";
     private static final String MSG_TEMPLATE_TEXT = "%s is the code to complete your verification";   
     private static final SecureRandom RAND = new SecureRandom();
+    
 
     private static JansUserRegistration INSTANCE = null;
+    private Map<String, String> flowConfig;
+    private final Map<String, String> emailOtpStore = new HashMap<>();
+    private static final Map<String, String> userCodes = new HashMap<>();
 
-    public JansUserRegistration() {}
+    //  No-arg constructor
+    public JansUserRegistration() {
+        this.flowConfig = new HashMap<>();
+        logger.info("Initialized JansUserRegistration using default constructor (no config).");
+    }
 
-    public static synchronized JansUserRegistration getInstance()
-    {
-        if (INSTANCE == null)
-            INSTANCE = new JansUserRegistration();
+    //  Constructor used by config
+    private JansUserRegistration(Map<String, String> config) {
+        this.flowConfig = config;
+        logger.info("Using Twilio account SID: {}", config.get("ACCOUNT_SID"));
+    }
 
+    //  No-arg singleton accessor (required by engine)
+    public static synchronized UserRegistration getInstance() {
+        if (INSTANCE == null) {
+            Map<String, String> config = loadTwilioConfig();
+            INSTANCE = new JansUserRegistration(config);
+        }
         return INSTANCE;
     }
 
-    // public boolean passwordPolicyMatch(String userPassword) {
-    // // Regex Explanation:
-    // // - (?=.*[!-~&&[^ ]]) ensures at least one printable ASCII character except space (also helps exclude space)
-    // // - (?=.*[!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~]) ensures at least one special character
-    // // - (?=.*[A-Za-z]) ensures at least one letter
-    // // - (?=.*\\d) ensures at least one digit
-    // // - [!-~&&[^ ]] limits all characters to printable ASCII excluding space (ASCII 33–126)
-    // String regex = '''^(?=.*[A-Za-z])(?=.*\\d)(?=.*[!"#$%&'()*+,-./:;<=>?@[\\\\]^_`{|}~])[!-~&&[^ ]]{12,24}$''';
-    //     Pattern pattern = Pattern.compile(regex);
-    //     return pattern.matcher(userPassword).matches();
-    // }
+    //  Config-based singleton accessor
+    public static synchronized UserRegistration getInstance(Map<String, String> config) {
+        if (INSTANCE == null) {
+            INSTANCE = new JansUserRegistration(config);
+        }
+        return INSTANCE;
+    }
 
-    // public boolean usernamePolicyMatch(String userName) {
-    // // Username must:
-    // // - Start with an English letter
-    // // - Contain only English letters and digits
-    // // - Be 6 to 20 characters long
-    // String regex = '''^[A-Za-z][A-Za-z0-9]{5,19}$''';
-    //     Pattern pattern = Pattern.compile(regex);
-    //     return pattern.matcher(userName).matches();
-    // }
-    
     public  Map<String, Object> validateInputs(Map<String, String> profile) {
         LogUtils.log("Validate inputs ");
         Map<String, Object> result = new HashMap<>();
@@ -181,42 +193,174 @@ public class JansUserRegistration extends UserRegistration {
     }
 
     public String sendEmail(String to, String lang) {
-        Map<String, String> labels = Labels.LANG_LABELS.getOrDefault(lang, Labels.LANG_LABELS.get("en"));
+        try {
+            ConfigurationService configService = CdiUtil.bean(ConfigurationService.class);
+            SmtpConfiguration smtpConfig = configService.getConfiguration().getSmtpConfiguration();
 
-        IntStream digits = RAND.ints(OTP_LENGTH, 0, 10);
-        String otp = digits.mapToObj(i -> "" + i).collect(Collectors.joining());
+            if (smtpConfig == null) {
+                LogUtils.log("SMTP configuration is missing.");
+                return null;
+            }
 
-        // Fetch each piece of text from the bundle
-        String subject = labels.get("subject");
-        String msgText = labels.get("msgText").replace("{0}", otp);
-        String line0 = labels.get("line0");
-        String line1 = labels.get("line1");
-        String line2 = labels.get("line2");
-        String line3 = labels.get("line3");
-        String line4 = labels.get("line4");
+            // Preferred language or fallback to English
+            String preferredLang = (lang != null && !lang.isEmpty())
+                    ? lang.toLowerCase()
+                    : "en";
 
-        String htmlBody = EmailTemplate.get(otp, line0, line1, line2, line3, line4);
+            // Generate OTP
+            String otp = IntStream.range(0, OTP_LENGTH)
+                    .mapToObj(i -> String.valueOf(RAND.nextInt(10)))
+                    .collect(Collectors.joining());
 
-        SmtpConfiguration smtpConfiguration = getSmtpConfiguration();
-        String from = smtpConfiguration.getFromEmailAddress();
+            // Pick localized email template
+            Map<String, String> templateData;
+            switch (preferredLang) {
+                case "ar":
+                    templateData = EmailRegistrationOtpAr.get(otp);
+                    break;
+                case "es":
+                    templateData = EmailRegistrationOtpEs.get(otp);
+                    break;
+                case "fr":
+                    templateData = EmailRegistrationOtpFr.get(otp);
+                    break;
+                case "id":
+                    templateData = EmailRegistrationOtpId.get(otp);
+                    break;
+                case "pt":
+                    templateData = EmailRegistrationOtpPt.get(otp);
+                    break;
+                default:
+                    templateData = EmailRegistrationOtpEn.get(otp);
+                    break;
+            }
 
-        MailService mailService = CdiUtil.bean(MailService.class);
-        if (mailService.sendMailSigned(from, from, to, null, subject, msgText, htmlBody)) {
-            LogUtils.log("E-mail has been delivered to % with code %", to, otp);
-            return otp;
+            String subject = templateData.get("subject");
+            String htmlBody = templateData.get("body");
+            String textBody = htmlBody.replaceAll("\\<.*?\\>", ""); // crude strip HTML
+
+            // Send email
+            MailService mailService = CdiUtil.bean(MailService.class);
+            boolean sent = mailService.sendMailSigned(
+                    smtpConfig.getFromEmailAddress(),
+                    smtpConfig.getFromName(),
+                    to,
+                    null,
+                    subject,
+                    textBody,
+                    htmlBody);
+
+            if (sent) {
+                LogUtils.log("Localized registration OTP email sent to %", to);
+                return otp; // return OTP so you can validate later
+            } else {
+                LogUtils.log("Failed to send registration OTP email to %", to);
+                return null;
+            }
+
+        } catch (Exception e) {
+            LogUtils.log("Failed to send registration OTP email: %", e.getMessage());
+            return null;
         }
+    }
 
-        LogUtils.log("E-mail delivery failed, check jans-auth logs");
-        return null;
-    }    
+
 
     private SmtpConfiguration getSmtpConfiguration() {
         ConfigurationService configurationService = CdiUtil.bean(ConfigurationService.class);
         SmtpConfiguration smtpConfiguration = configurationService.getConfiguration().getSmtpConfiguration();
-        LogUtils.log("Your smtp configuration is %", smtpConfiguration);
         return smtpConfiguration;
 
-    }     
+    }
+    
+        
+    public String sendOTPCode(String phone) {
+        try {
+            logger.info("Sending OTP Code via SMS to phone: {}", phone);
+
+            String otpCode = generateSMSOTpCode(OTP_CODE_LENGTH);
+
+            logger.info("Generated OTP {} for phone {}", otpCode, phone);
+
+            String message = "Welcome to AgamaLab. This is your OTP Code: " + otpCode;
+
+            associateGeneratedCodeToPhone(phone, otpCode);
+
+            sendTwilioSms(phone, message);
+            return phone; // Return phone if successful
+        } catch (Exception ex) {
+            logger.error("Failed to send OTP to phone: {}. Error: {}", phone, ex.getMessage(), ex);
+            return null;
+        }
+
+    }
+
+    private String generateSMSOTpCode(int codeLength) {
+        String numbers = "0123456789";
+        SecureRandom random = new SecureRandom();
+        char[] otp = new char[codeLength];
+        for (int i = 0; i < codeLength; i++) {
+            otp[i] = numbers.charAt(random.nextInt(numbers.length()));
+        }
+        return new String(otp);
+    }
+
+    private boolean associateGeneratedCodeToPhone(String phone, String code) {
+        try {
+            logger.info("Associating code {} to phone {}", code, phone);
+            userCodes.put(phone, code);
+            logger.info("userCodes map now: {}", userCodes);
+            return true;
+        } catch (Exception e) {
+            logger.error("Error associating OTP code to phone {}. Error: {}", phone, e.getMessage(), e);
+            return false;
+        }
+    }
+
+    private boolean sendTwilioSms(String phone, String message) {
+        try {
+
+            PhoneNumber FROM_NUMBER = new com.twilio.type.PhoneNumber(flowConfig.get("FROM_NUMBER"));
+
+            logger.info("FROM_NUMBER", FROM_NUMBER);
+
+            PhoneNumber TO_NUMBER = new com.twilio.type.PhoneNumber(phone);
+
+            logger.info("TO_NUMBER", TO_NUMBER);
+
+            Twilio.init(flowConfig.get("ACCOUNT_SID"), flowConfig.get("AUTH_TOKEN"));
+
+            logger.info(null, flowConfig.get("ACCOUNT_SID"), flowConfig.get("AUTH_TOKEN"));
+
+            Message.creator(TO_NUMBER, FROM_NUMBER, message).create();
+
+            logger.info("OTP code has been successfully send to {} on phone number {} .", phone);
+
+            return true;
+        } catch (Exception exception) {
+            logger.error("Error sending OTP code to user {} on pone number {} : error {} .", phone,
+                    exception.getMessage(), exception);
+            return false;
+        }
+    }
+
+    public boolean validateOTPCode(String phone, String code) {
+        try {
+            logger.info("Validating OTP code {} for phone {}", code, phone);
+            String storedCode = userCodes.getOrDefault(phone, "NULL");
+            logger.info("User submitted code: {} — Stored code: {}", code, storedCode);
+            if (storedCode.equalsIgnoreCase(code)) {
+                userCodes.remove(phone); // Remove after successful validation
+                return true;
+            }
+            return false;
+        } catch (Exception ex) {
+            logger.error("Error validating OTP code {} for phone {}. Error: {}", code, phone, ex.getMessage(), ex);
+            return false;
+        }
+    }
+
+
 
 
     public String addNewUser(Map<String, String> profile) throws Exception {
@@ -230,6 +374,10 @@ public class JansUserRegistration extends UserRegistration {
             }
         });
 
+        // defaults
+        user.setAttribute("emailVerified", Boolean.TRUE);
+        user.setAttribute("phoneNumberVerified", Boolean.FALSE);
+
         UserService userService = CdiUtil.bean(UserService.class);
         user = userService.addUser(user, true); // Set user status active
     
@@ -239,6 +387,27 @@ public class JansUserRegistration extends UserRegistration {
     
         return getSingleValuedAttr(user, INUM_ATTR);
     } 
+
+    public boolean markPhoneAsVerified(String userName) {
+        try {
+            UserService userService = CdiUtil.bean(UserService.class);
+            User user = getUser(UID, userName);
+            if (user == null) {
+                logger.error("User not found for username {}", userName);
+                return false;
+            }
+
+            // 🔑 Just set to true
+            user.setAttribute(PHONE_VERIFIED, Boolean.TRUE);
+
+            userService.updateUser(user);
+            logger.info("Phone verification set to TRUE for UID {}", userName);
+            return true;
+        } catch (Exception e) {
+            logger.error("Error setting phone verified TRUE for UID {}: {}", userName, e.getMessage(), e);
+            return false;
+        }
+    }
 
     private String getSingleValuedAttr(User user, String attribute) {
         Object value = null;
